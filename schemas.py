@@ -1,0 +1,14 @@
+from pydantic import BaseModel
+from typing import Optional
+from models import TaskStatus
+
+class TaskCreate(BaseModel):
+    title: str
+    description: Optional[str] = None
+
+class TaskUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    status: Optional[TaskStatus] = None
+
+    
